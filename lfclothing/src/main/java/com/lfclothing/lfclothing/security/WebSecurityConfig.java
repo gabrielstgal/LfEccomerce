@@ -61,6 +61,8 @@ public class WebSecurityConfig {
             .authorizeHttpRequests(auth -> 
                 auth.requestMatchers("/api/auth/**", "/error").permitAll()
                     .requestMatchers(HttpMethod.GET, "/api/products/**").permitAll()
+                    // Webhook do AbacatePay não carrega token JWT — deve ser público
+                    .requestMatchers(HttpMethod.POST, "/api/payment/webhook").permitAll()
                     .anyRequest().authenticated()
             );
 

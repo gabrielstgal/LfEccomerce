@@ -10,6 +10,8 @@ import AdminDashboard from './pages/AdminDashboard';
 import AuthPage from './pages/AuthPage';
 import ProductDetails from './pages/ProductDetails';
 import Checkout from './pages/Checkout';
+import PaymentSuccess from './pages/PaymentSuccess';
+import PaymentCanceled from './pages/PaymentCanceled';
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
           <Route path="/auth" element={<AuthPage />} />
           <Route path="/produto/:id" element={<ProductDetails />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/pagamento/sucesso" element={<PaymentSuccess />} />
+          <Route path="/pagamento/cancelado" element={<PaymentCanceled />} />
         </Routes>
       </main>
 
